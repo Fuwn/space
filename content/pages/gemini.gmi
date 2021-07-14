@@ -1,0 +1,16 @@
+# GEMINI
+
+What is Gemini? I think DT from DistroTube explains it well:
+
+=> gemini://distro.tube distro.tube
+=> https://distrotube.com distrotube.com
+
+## WHY GEMINI?
+
+I have decided to move my personal websites -- and some other projects -- over to the Gemini protocol for a number of reasons (in no specific order):
+
+* Gemini-based capsules are easy to maintain
+* Gemini-based capsules are fun to maintain!
+* No tracking, ads, or any other uneeded fluff
+* The community: From the short experience I have had with the Gemini community, it has been awesome! I love to see the motivation and movement behind this project, it's really inspiring!
+* The development-sphere

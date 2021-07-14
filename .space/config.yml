@@ -1,0 +1,9 @@
+space:
+  port: 1965
+  hits: true
+  footer:
+    copyright: "Copyright (C) 2021-2021 Fuwn"
+    quotes:
+      - "That brain of mine is something more than merely mortal; as time will show. - Ada Lovelace"
+      - "Forget this world and all its troubles and if possible its multitudinous Charlatans -- everything in short but the Enchantress of Numbers. - Ada Lovelace"
+      - "If you can't give me poetry, can't you give me poetical science? - Ada Lovelace"

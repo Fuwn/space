@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  space:
+    ports:
+      - "1965:1965"
+    volumes:
+      - ./.space-data:/app/.space
+    image: fuwn/space:latest

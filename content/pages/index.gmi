@@ -1,0 +1,10 @@
+# FUWN.INFO
+
+Welcome to my Gemini capsule!
+
+## PROJECT GEMINI
+
+What is Gemini? I think DT from DistroTube explains it well:
+
+=> gemini://distro.tube distro.tube
+=> https://distrotube.com distrotube.com

@@ -1,0 +1,18 @@
+# SKILLS
+
+## Tech Stacks
+
+* Node.js: Discord.js, Angular, Express, Akairo, React, Nuxt, Vue
+* Deno
+* Python
+* Java: Bukkit, Spark, JDA
+* Rust: Serenity, Rocket, Actix, Tokio
+* PHP: FluxBB, MyBB
+
+## Tools, Accessories
+
+* Document Preperation: Markdown (Pandoc), LaTeX
+* Build Tools: CMake, Make
+* Version Control: Git
+* Game Engines: Unity
+* Databases: PostgreSQL, SQLite, Mongo, MySQL
