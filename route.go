@@ -4,6 +4,7 @@
 package main
 
 import (
+	"github.com/fuwn/space/pkg/database"
 	"github.com/fuwn/space/pkg/utilities"
 	"github.com/pitr/gig"
 )
@@ -13,7 +14,7 @@ func createRoute(route string, template string, content string) {
 		return c.Render(template, IndexTemplate{
 			Content:   GetContent(content),
 			Quote:     utilities.GetRandomQuote(),
-			Hits:      hitsTracker[route] + 1,
+			Hits:      database.Get(route) + 1,
 			Copyright: utilities.GetCopyright(),
 		})
 	})
@@ -25,7 +26,7 @@ func createErrorRoute(route string, template string, content string, err string)
 			Error:     err,
 			Content:   GetContent(content),
 			Quote:     utilities.GetRandomQuote(),
-			Hits:      hitsTracker[route] + 1,
+			Hits:      database.Get(route) + 1,
 			Copyright: utilities.GetCopyright(),
 		})
 	})

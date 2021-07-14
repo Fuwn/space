@@ -3,5 +3,7 @@
 
 # Development
 /.space/.certificates/
+/.space/database/
 /.space-data/.certificates/
+/.space-data/database/
 /space

@@ -7,6 +7,7 @@ import (
 	"io"
 	"text/template"
 
+	"github.com/fuwn/space/pkg/database"
 	"github.com/pitr/gig"
 	"github.com/spf13/viper"
 )
@@ -43,12 +44,11 @@ func (_ ErrorTemplate) HitsEnabled() bool {
 func (t *Template) Render(w io.Writer, name string, data interface{}, c gig.Context) error {
 	// Check if the route is present in the hits tracker, if it isn't present, add
 	// it, but either way: increment it.
-	//
-	// https://stackoverflow.com/a/2050570
-	if _, ok := hitsTracker[c.Path()]; !ok {
-		hitsTracker[c.Path()] = 0
+	hits := database.Get(c.Path())
+	if hits == 0 {
+		database.Create(c.Path())
 	}
-	hitsTracker[c.Path()]++
+	database.Increment(c.Path())
 
 	return t.Templates.ExecuteTemplate(w, name, data)
 }
