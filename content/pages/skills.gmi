@@ -1,6 +1,6 @@
 # SKILLS
 
-## Tech Stacks
+## TECH STACKS
 
 * Node.js: Discord.js, Angular, Express, Akairo, React, Nuxt, Vue
 * Deno
@@ -9,7 +9,7 @@
 * Rust: Serenity, Rocket, Actix, Tokio
 * PHP: FluxBB, MyBB
 
-## Tools, Accessories
+## TOOLS, ACCESSORIES
 
 * Document Preperation: Markdown (Pandoc), LaTeX
 * Build Tools: CMake, Make

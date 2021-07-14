@@ -2,7 +2,7 @@
 
 A collection of somethings that I think are pretty neat and am considering picking up sometime in the future.
 
-## Programming Languages
+## PROGRAMMING LANGUAGES
 
 => https://www.angelcode.com/angelscript/ AngelScript
 => https://github.com/Hirrolot/metalang99 Metalang99
@@ -24,7 +24,7 @@ A collection of somethings that I think are pretty neat and am considering picki
 => https://dlang.org/ D
 => https://vlang.io/ V
 
-## Frameworks
+## FRAMEWORKS
 
 => https://flutter.dev/ Flutter
 => https://svelte.dev/ Svelte
