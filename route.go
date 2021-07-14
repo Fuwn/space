@@ -18,10 +18,27 @@ func createRoute(route string, template string, content string) {
 			Copyright: utilities.GetCopyright(),
 		})
 	})
+	g.Handle(route+".gmi", func(c gig.Context) error {
+		return c.Render(template, IndexTemplate{
+			Content:   GetContent(content),
+			Quote:     utilities.GetRandomQuote(),
+			Hits:      database.Get(route) + 1,
+			Copyright: utilities.GetCopyright(),
+		})
+	})
 }
 
 func createErrorRoute(route string, template string, content string, err string) {
 	g.Handle(route, func(c gig.Context) error {
+		return c.Render(template, ErrorTemplate{
+			Error:     err,
+			Content:   GetContent(content),
+			Quote:     utilities.GetRandomQuote(),
+			Hits:      database.Get(route) + 1,
+			Copyright: utilities.GetCopyright(),
+		})
+	})
+	g.Handle(route+".gmi", func(c gig.Context) error {
 		return c.Render(template, ErrorTemplate{
 			Error:     err,
 			Content:   GetContent(content),
