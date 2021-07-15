@@ -17,9 +17,10 @@ type Template struct {
 }
 
 type IndexTemplate struct {
-	Content   string
-	Quote     string
-	Hits      int
+	Content string
+	Quote   string
+	Hits    int
+	// SystemInfo string
 	Copyright string
 }
 type ErrorTemplate struct {

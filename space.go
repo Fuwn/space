@@ -22,6 +22,8 @@ var g = gig.Default()
 
 var hitsTracker = make(map[string]int)
 
+// var startTime = time.Now()
+
 // Initialize templates
 func init() {
 	templates, _ := fs.Sub(contentFilesystem, "content/templates")

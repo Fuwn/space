@@ -10,11 +10,14 @@ import (
 )
 
 func createRoute(route string, template string, content string) {
+	// hostInformation, _ := host.Info()
+
 	g.Handle(route, func(c gig.Context) error {
 		return c.Render(template, IndexTemplate{
-			Content:   GetContent(content),
-			Quote:     utilities.GetRandomQuote(),
-			Hits:      database.Get(route) + 1,
+			Content: GetContent(content),
+			Quote:   utilities.GetRandomQuote(),
+			Hits:    database.Get(route) + 1,
+			// SystemInfo: fmt.Sprintf("Host: %s %s, Uptime: %d seconds, Routes: %d", strings.Title(hostInformation.Platform), strings.Title(hostInformation.OS), int64(time.Since(startTime).Seconds()), len(g.Routes())),
 			Copyright: utilities.GetCopyright(),
 		})
 	})
