@@ -15,6 +15,7 @@ func routes() {
 	createRoute("/interests", "default.gmi", "pages/interests.gmi")
 	createRoute("/contact", "default.gmi", "pages/contact.gmi")
 	createRoute("/gemini", "default.gmi", "pages/gemini.gmi")
+	createBlogRoute("/blog", "pages/blog")
 }
 
 func errors() {

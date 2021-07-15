@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"os"
 	"time"
+	"unicode/utf8"
 
 	"github.com/spf13/viper"
 )
@@ -37,4 +38,12 @@ func DoesFilesExist(files []string) []string {
 	}
 
 	return nonExistant
+}
+
+func TrimLastChar(s string) string {
+	r, size := utf8.DecodeLastRuneInString(s)
+	if r == utf8.RuneError && (size == 0 || size == 1) {
+		size = 0
+	}
+	return s[:len(s)-size]
 }

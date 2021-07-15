@@ -4,6 +4,9 @@
 package main
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/fuwn/space/pkg/database"
 	"github.com/fuwn/space/pkg/utilities"
 	"github.com/pitr/gig"
@@ -47,5 +50,35 @@ func createErrorRoute(route string, template string, content string, err string)
 func createFileRoute(route string, file string) {
 	g.Handle(route, func(c gig.Context) error {
 		return c.Text(GetContent(file))
+	})
+}
+
+func createBlogRoute(baseRoute string, postPath string) {
+	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
+
+	files := "# BLOG POSTS (" + fmt.Sprintf("%d", (len(contents))) + ")\n\n"
+	for _, file := range contents {
+		fileNameNoExt := strings.Replace(file.Name(), ".gmi", "", -1)
+
+		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+file.Name(), fileNameNoExt)
+		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
+	}
+	files = utilities.TrimLastChar(files)
+
+	g.Handle(baseRoute, func(c gig.Context) error {
+		return c.Render("default.gmi", IndexTemplate{
+			Content:   files,
+			Quote:     utilities.GetRandomQuote(),
+			Hits:      database.Get(baseRoute) + 1,
+			Copyright: utilities.GetCopyright(),
+		})
+	})
+	// Legacy support?
+	endString := ".gmi"
+	if baseRoute[len(baseRoute)-1:] == "/" {
+		endString = "index.gmi"
+	}
+	g.Handle(baseRoute+endString, func(c gig.Context) error {
+		return c.NoContent(gig.StatusRedirectPermanent, baseRoute)
 	})
 }
