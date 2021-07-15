@@ -33,6 +33,9 @@ func createRoute(route string, template string, content string) {
 	g.Handle(route+endString, func(c gig.Context) error {
 		return c.NoContent(gig.StatusRedirectPermanent, route)
 	})
+	g.Handle(route+"/", func(c gig.Context) error {
+		return c.NoContent(gig.StatusRedirectPermanent, route)
+	})
 }
 
 func createErrorRoute(route string, template string, content string, err string) {
@@ -79,6 +82,9 @@ func createBlogRoute(baseRoute string, postPath string) {
 		endString = "index.gmi"
 	}
 	g.Handle(baseRoute+endString, func(c gig.Context) error {
+		return c.NoContent(gig.StatusRedirectPermanent, baseRoute)
+	})
+	g.Handle(baseRoute+"/", func(c gig.Context) error {
 		return c.NoContent(gig.StatusRedirectPermanent, baseRoute)
 	})
 }
