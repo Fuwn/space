@@ -24,6 +24,7 @@ You can try refreshing the page, if that doesn't change anything, contact Fuwn!
 => /interests Interests
 => /contact Contact
 => /gemini Gemini
+=> /blog Blog
 
 ## FOOTER
 
