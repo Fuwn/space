@@ -36,7 +36,7 @@ func Get(path string) int {
 		return 0
 	}
 
-	return hit.Count
+	return hit.Count + 1
 }
 
 func Create(path string) {

@@ -21,7 +21,7 @@ func createRoute(route string, template string, content string) {
 		return c.Render(template, IndexTemplate{
 			Content: GetContent(content),
 			Quote:   utilities.GetRandomQuote(),
-			Hits:    database.Get(route) + 1,
+			Hits:    database.Get(route),
 			// SystemInfo: fmt.Sprintf("Host: %s %s, Uptime: %d seconds, Routes: %d", strings.Title(hostInformation.Platform), strings.Title(hostInformation.OS), int64(time.Since(startTime).Seconds()), len(g.Routes())),
 			Copyright: utilities.GetCopyright(),
 		})
@@ -36,7 +36,7 @@ func createErrorRoute(route string, template string, content string, err string)
 			Error:     err,
 			Content:   GetContent(content),
 			Quote:     utilities.GetRandomQuote(),
-			Hits:      database.Get(route) + 1,
+			Hits:      database.Get(route),
 			Copyright: utilities.GetCopyright(),
 		})
 	})
@@ -59,7 +59,7 @@ func createBlogHandler(route string) {
 		return c.Render("default.gmi", IndexTemplate{
 			Content:   blogList,
 			Quote:     utilities.GetRandomQuote(),
-			Hits:      database.Get(route) + 1,
+			Hits:      database.Get(route),
 			Copyright: utilities.GetCopyright(),
 		})
 	})
@@ -87,7 +87,7 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 		return c.Render("default.gmi", IndexTemplate{
 			Content:   files,
 			Quote:     utilities.GetRandomQuote(),
-			Hits:      database.Get(baseRoute) + 1,
+			Hits:      database.Get(baseRoute),
 			Copyright: utilities.GetCopyright(),
 		})
 	})
