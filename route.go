@@ -12,6 +12,8 @@ import (
 	"github.com/pitr/gig"
 )
 
+var blogs = make(map[string]string)
+
 func createRoute(route string, template string, content string) {
 	// hostInformation, _ := host.Info()
 
@@ -25,17 +27,7 @@ func createRoute(route string, template string, content string) {
 		})
 	})
 
-	// Legacy support?
-	endString := ".gmi"
-	if route[len(route)-1:] == "/" {
-		endString = "index.gmi"
-	}
-	g.Handle(route+endString, func(c gig.Context) error {
-		return c.NoContent(gig.StatusRedirectPermanent, route)
-	})
-	g.Handle(route+"/", func(c gig.Context) error {
-		return c.NoContent(gig.StatusRedirectPermanent, route)
-	})
+	legacySupport(route)
 }
 
 func createErrorRoute(route string, template string, content string, err string) {
@@ -56,10 +48,31 @@ func createFileRoute(route string, file string) {
 	})
 }
 
-func createBlogRoute(baseRoute string, postPath string) {
+func createBlogHandler(route string) {
+	g.Handle(route, func(c gig.Context) error {
+		blogList := "# BLOG LIST (" + fmt.Sprintf("%d", len(blogs)) + ")\n\n"
+		for blog, name := range blogs {
+			blogList += fmt.Sprintf("=> %s %s\n", blog, name)
+		}
+		blogList = utilities.TrimLastChar(blogList)
+
+		return c.Render("default.gmi", IndexTemplate{
+			Content:   blogList,
+			Quote:     utilities.GetRandomQuote(),
+			Hits:      database.Get(route) + 1,
+			Copyright: utilities.GetCopyright(),
+		})
+	})
+
+	legacySupport(route)
+}
+
+func createBlogRoute(baseRoute string, postPath string, name string) {
+	baseRoute = "/blog" + baseRoute
+
 	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
 
-	files := "# BLOG POSTS (" + fmt.Sprintf("%d", (len(contents))) + ")\n\n"
+	files := fmt.Sprintf("# %s (%d)\n\n", strings.ToUpper(name), len(contents))
 	for _, file := range contents {
 		fileNameNoExt := strings.Replace(file.Name(), ".gmi", "", -1)
 
@@ -67,6 +80,8 @@ func createBlogRoute(baseRoute string, postPath string) {
 		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
 	}
 	files = utilities.TrimLastChar(files)
+
+	blogs[baseRoute] = name
 
 	g.Handle(baseRoute, func(c gig.Context) error {
 		return c.Render("default.gmi", IndexTemplate{
@@ -76,7 +91,10 @@ func createBlogRoute(baseRoute string, postPath string) {
 			Copyright: utilities.GetCopyright(),
 		})
 	})
-	// Legacy support?
+	legacySupport(baseRoute)
+}
+
+func legacySupport(baseRoute string) {
 	endString := ".gmi"
 	if baseRoute[len(baseRoute)-1:] == "/" {
 		endString = "index.gmi"
