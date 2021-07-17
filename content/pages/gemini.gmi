@@ -48,6 +48,12 @@ Mozz.us and Vuples.one Portals: Great Gemini to HTTP proxies, simple and intuiti
 => https://portal.mozz.us portal.mozz.us
 => https://proxy.vulpes.one proxy.vulpes.one
 
+Alternatively, you can also use Kineto's (the Gemino-to-HTTP proxy I use for this capsule) built in proxy at the following URL:
+
+=> https://www.fuwn.space/x/fuwn.space www.fuwn.space/x/fuwn.space
+
+Just replace the "fuwn.space" after "x/" with whatever Gemini capsule you would like to visit, but be warned; it is not as sophisticated as the aforementioned proxies above, but it gets the job done!
+
 ### CAPSULES
 
 => gemini://gemini.circumlunar.space Project Gemini
