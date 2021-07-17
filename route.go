@@ -76,7 +76,7 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 	for _, file := range contents {
 		fileNameNoExt := strings.Replace(file.Name(), ".gmi", "", -1)
 
-		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+file.Name(), fileNameNoExt)
+		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+fileNameNoExt, fileNameNoExt)
 		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
 	}
 	files = utilities.TrimLastChar(files)
