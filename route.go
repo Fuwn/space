@@ -73,7 +73,7 @@ func createBlogHandler(route string) {
 	legacySupport(route)
 }
 
-func createBlogRoute(baseRoute string, postPath string, name string) {
+func createBlogRoute(baseRoute string, postPath string, name string, reverse bool) {
 	baseRoute = "/blog" + baseRoute
 
 	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
@@ -82,12 +82,15 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 
 	var description string
 
-	// Reverse contents so that the oldest file is at the bottom
-	//
-	// https://stackoverflow.com/a/19239850
-	for i, j := 0, len(contents)-1; i < j; i, j = i+1, j-1 {
-		contents[i], contents[j] = contents[j], contents[i]
+	if reverse {
+		// Reverse contents so that the oldest file is at the bottom
+		//
+		// https://stackoverflow.com/a/19239850
+		for i, j := 0, len(contents)-1; i < j; i, j = i+1, j-1 {
+			contents[i], contents[j] = contents[j], contents[i]
+		}
 	}
+
 	// Could be useful later:
 	// https://golangcode.com/sorting-an-array-of-numeric-items/
 	for _, file := range contents {
