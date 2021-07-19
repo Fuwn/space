@@ -14,6 +14,12 @@ import (
 
 var blogs = make(map[string]string)
 
+const (
+	dateShow = iota
+	dateNoShow
+	noDateNoShow
+)
+
 func createRoute(route string, template string, content string) {
 	// hostInformation, _ := host.Info()
 
@@ -73,7 +79,7 @@ func createBlogHandler(route string) {
 	legacySupport(route)
 }
 
-func createBlogRoute(baseRoute string, postPath string, name string, reverse bool) {
+func createBlogRoute(baseRoute string, postPath string, name string, reverse bool, showDate int) {
 	baseRoute = "/blog" + baseRoute
 
 	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
@@ -94,7 +100,8 @@ func createBlogRoute(baseRoute string, postPath string, name string, reverse boo
 	// Could be useful later:
 	// https://golangcode.com/sorting-an-array-of-numeric-items/
 	for _, file := range contents {
-		if file.Name() == "description.gmi" {
+		println(file.Name())
+		if file.Name() == "0description.gmi" {
 			description = GetContent("pages" + baseRoute + "/" + file.Name())
 			files += description + "\n"
 			continue
@@ -103,14 +110,19 @@ func createBlogRoute(baseRoute string, postPath string, name string, reverse boo
 		// Temporary, until it causes problems...
 		fileNameNoExt := strings.ReplaceAll(file.Name(), ".gmi", "")
 
-		fileDate := fileNameNoExt[0:10]
-		fileNameNoExtTitle := strings.Title(fileNameNoExt[11:])
+		var postTitle string
+		switch showDate {
+		case dateShow:
+			postTitle = fmt.Sprintf("%s %s", fileNameNoExt[0:10], strings.Title(fileNameNoExt[11:]))
 
-		files += fmt.Sprintf(
-			"=> %s %s\n",
-			baseRoute+"/"+fileNameNoExt,
-			fmt.Sprintf("%s %s", fileDate, fileNameNoExtTitle),
-		)
+		case dateNoShow:
+			postTitle = strings.Title(fileNameNoExt[11:])
+
+		case noDateNoShow:
+			postTitle = strings.Title(fileNameNoExt)
+		}
+
+		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+fileNameNoExt, postTitle)
 		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
 	}
 
