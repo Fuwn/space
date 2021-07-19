@@ -78,7 +78,9 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 
 	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
 
-	files := fmt.Sprintf("# %s (%d)\n\n", strings.ToUpper(name), len(contents))
+	files := fmt.Sprintf("# %s (%d)\n\n", strings.ToUpper(name), len(contents)-1)
+
+	var description string
 
 	// Reverse contents so that the oldest file is at the bottom
 	//
@@ -89,6 +91,12 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 	// Could be useful later:
 	// https://golangcode.com/sorting-an-array-of-numeric-items/
 	for _, file := range contents {
+		if file.Name() == "description.gmi" {
+			description = GetContent("pages" + baseRoute + "/" + file.Name())
+			files += description + "\n"
+			continue
+		}
+
 		// Temporary, until it causes problems...
 		fileNameNoExt := strings.ReplaceAll(file.Name(), ".gmi", "")
 
@@ -102,6 +110,7 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 		)
 		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
 	}
+
 	files = utilities.TrimLastChar(files)
 
 	blogs[baseRoute] = name
