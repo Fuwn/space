@@ -33,16 +33,6 @@ Kineto: A Gemini to HTTP proxy, simple and just works.
 
 => https://git.sr.ht/~sircmpwn/kineto Kineto
 
-### FRAMEWORKS & SERVERS
-
-Gig: A Golang framework for developing and deploying dynamic (or static) Gemini capsules.
-
-=> https://github.com/pitr/gig Gig
-
-Agate: A static Gemini server written in Rust! I'd recommend this to just about anyone!
-
-=> gemini://gem.limpet.net/agate Agate
-
 Mozz.us and Vuples.one Portals: Great Gemini to HTTP proxies, simple and intuitive.
 
 => https://portal.mozz.us portal.mozz.us
@@ -53,6 +43,16 @@ Alternatively, you can also use Kineto's (the Gemino-to-HTTP proxy I use for thi
 => https://www.fuwn.space/x/fuwn.space www.fuwn.space/x/fuwn.space
 
 Just replace the "fuwn.space" after "x/" with whatever Gemini capsule you would like to visit, but be warned; it is not as sophisticated as the aforementioned proxies above, but it gets the job done!
+
+### FRAMEWORKS & SERVERS
+
+Gig: A Golang framework for developing and deploying dynamic (or static) Gemini capsules.
+
+=> https://github.com/pitr/gig Gig
+
+Agate: A static Gemini server written in Rust! I'd recommend this to just about anyone!
+
+=> gemini://gem.limpet.net/agate Agate
 
 ### CAPSULES
 
