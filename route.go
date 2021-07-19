@@ -22,7 +22,13 @@ func createRoute(route string, template string, content string) {
 			Content: GetContent(content),
 			Quote:   utilities.GetRandomQuote(),
 			Hits:    database.Get(route),
-			// SystemInfo: fmt.Sprintf("Host: %s %s, Uptime: %d seconds, Routes: %d", strings.Title(hostInformation.Platform), strings.Title(hostInformation.OS), int64(time.Since(startTime).Seconds()), len(g.Routes())),
+			/* SystemInfo: fmt.Sprintf(
+				"Host: %s %s, Uptime: %d seconds, Routes: %d",
+				strings.Title(hostInformation.Platform),
+				strings.Title(hostInformation.OS),
+				int64(time.Since(startTime).Seconds()),
+				len(g.Routes()),
+			), */
 			Copyright: utilities.GetCopyright(),
 		})
 	})
@@ -73,10 +79,27 @@ func createBlogRoute(baseRoute string, postPath string, name string) {
 	contents, _ := contentFilesystem.ReadDir("content/" + postPath)
 
 	files := fmt.Sprintf("# %s (%d)\n\n", strings.ToUpper(name), len(contents))
+
+	// Reverse contents so that the oldest file is at the bottom
+	//
+	// https://stackoverflow.com/a/19239850
+	for i, j := 0, len(contents)-1; i < j; i, j = i+1, j-1 {
+		contents[i], contents[j] = contents[j], contents[i]
+	}
+	// Could be useful later:
+	// https://golangcode.com/sorting-an-array-of-numeric-items/
 	for _, file := range contents {
+		// Temporary, until it causes problems...
 		fileNameNoExt := strings.ReplaceAll(file.Name(), ".gmi", "")
 
-		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+fileNameNoExt, fileNameNoExt)
+		fileDate := fileNameNoExt[0:10]
+		fileNameNoExtTitle := strings.Title(fileNameNoExt[11:])
+
+		files += fmt.Sprintf(
+			"=> %s %s\n",
+			baseRoute+"/"+fileNameNoExt,
+			fmt.Sprintf("%s %s", fileDate, fileNameNoExtTitle),
+		)
 		createRoute(baseRoute+"/"+fileNameNoExt, "default.gmi", "pages"+baseRoute+"/"+file.Name())
 	}
 	files = utilities.TrimLastChar(files)
