@@ -18,6 +18,7 @@ ______
 => /interests Interests
 => /contact Contact
 => /gemini Gemini
+=> /gopher Gopher
 => /blog Blog
 
 ## FOOTER

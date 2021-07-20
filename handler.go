@@ -10,11 +10,13 @@ func handle() {
 }
 
 func routes() {
+	// TODO: Automate this
 	createRoute("/", "default.gmi", "pages/index.gmi")
 	createRoute("/skills", "default.gmi", "pages/skills.gmi")
 	createRoute("/interests", "default.gmi", "pages/interests.gmi")
 	createRoute("/contact", "default.gmi", "pages/contact.gmi")
 	createRoute("/gemini", "default.gmi", "pages/gemini.gmi")
+	createRoute("/gopher", "default.gmi", "pages/gopher.gmi")
 
 	// TODO: Iterate over content/pages/blog directory to automate blog routing
 	createBlogRoute("/programming_languages", "pages/blog/programming_languages", "Programming Languages", false, noDateNoShow)
