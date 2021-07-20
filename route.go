@@ -100,7 +100,6 @@ func createBlogRoute(baseRoute string, postPath string, name string, reverse boo
 	// Could be useful later:
 	// https://golangcode.com/sorting-an-array-of-numeric-items/
 	for _, file := range contents {
-		println(file.Name())
 		if file.Name() == "0description.gmi" {
 			description = GetContent("pages" + baseRoute + "/" + file.Name())
 			files += description + "\n"
