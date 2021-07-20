@@ -1,7 +1,7 @@
 # Golang
 
 Author: Fuwn
-Created: 2021. 07. 15.
+Created: 2021. 07. 19.
 Last Modified: 2021. 07. 20.
 
 Golang... Go is quite a funny language to me. I have a hard time taking it seriously, not because of the name, but because of the way it handles. Don't get me wrong, Go is a great tool to have under your belt, but it just feels very... "childish" ... to ME.
