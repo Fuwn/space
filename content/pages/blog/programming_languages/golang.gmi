@@ -2,7 +2,7 @@
 
 Author: Fuwn
 Created: 2021. 07. 15.
-Last Modified: 2021. 07. 15.
+Last Modified: 2021. 07. 20.
 
 Golang... Go is quite a funny language to me. I have a hard time taking it seriously, not because of the name, but because of the way it handles. Don't get me wrong, Go is a great tool to have under your belt, but it just feels very... "childish" ... to ME.
 
@@ -31,18 +31,18 @@ Reasons for anyone to learn or to use Go!
 
 Nitpicks, not deal-breakers!
 
-* Garbage collected: Not necessarily a hard-con, but contributes to more memory overhead
+* Garbage collected: Not necessarily a hard-con, but contributes to more memory overhead (not as much as Node.js though)
 * Can be too simple at times
 * Creepy dependency management and "package manager": `$ go get ...` seems pre-mature and underdeveloped
 
-One thing you might see a lot when there is talk about Go is the claim that Go hasn't "found it's niche" or "it has no real purpose". To that I say; Go's niche is it's simplicity, and ability to introduce someone into the compiled language space, and to develop speedy software with, speed.
+One thing you might see a lot when there is talk about Go is the claim that Go hasn't "found it's niche" or "it has no real purpose". To that I say; Go's niche is it's simplicity, it's ability to introduce someone into the compiled language space, and to develop software with speed.
 
 ## WHO WOULD I RECOMMEND GO TO?
 
 People who...
 
-* don't have much time
-* want to learning programming (or a compiled language)
+* don't have much time for boilerplate material
+* want to get into programming (or compiled languages)
 
 and dare I say it... anyone!
 
