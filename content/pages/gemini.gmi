@@ -11,7 +11,7 @@ I have decided to move my personal websites -- and some other projects -- over t
 
 * Gemini-based capsules are easy to maintain
 * Gemini-based capsules are fun to maintain!
-* No tracking, ads, or any other uneeded fluff
+* No tracking, ads, or any other unneeded fluff
 * The community: From the short experience I have had with the Gemini community, it has been awesome! I love to see the motivation and movement behind this project, it's really inspiring!
 * The development-sphere
 
@@ -26,6 +26,10 @@ Amfora: A very nice, feature-rich, and easy-to-use CLI client for Gemini, my cli
 Bollux: A fun little CLI client for Gemini written in Bash! I mostly use this for quick and dirty testing and development purposes.
 
 => https://sr.ht/~acdw/bollux/ Bollux
+
+Elaho: An elegant IOS Gemini client.
+
+=> gemini://elaho.glv.one
 
 ### PROXIES
 
