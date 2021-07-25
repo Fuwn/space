@@ -8,3 +8,7 @@ What is Gemini? I think DT from DistroTube explains it well:
 
 => gemini://distro.tube distro.tube
 => https://distrotube.com distrotube.com
+
+You can also read more into Gemini
+
+=> /gemini here!
