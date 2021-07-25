@@ -118,7 +118,7 @@ func createBlogRoute(baseRoute string, postPath string, name string, reverse boo
 			postTitle = strings.Title(fileNameNoExt[11:])
 
 		case noDateNoShow:
-			postTitle = strings.Title(fileNameNoExt)
+			postTitle = fileNameNoExt
 		}
 
 		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+fileNameNoExt, postTitle)
