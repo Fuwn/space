@@ -25,7 +25,7 @@ func createRoute(route string, template string, content string) {
 
 	g.Handle(route, func(c gig.Context) error {
 		return c.Render(template, IndexTemplate{
-			Content: GetContent(content),
+			Content: utilities.TrimLastChar(GetContent(content)),
 			Quote:   utilities.GetRandomQuote(),
 			Hits:    database.Get(route),
 			/* SystemInfo: fmt.Sprintf(
@@ -119,6 +119,7 @@ func createBlogRoute(baseRoute string, postPath string, name string, reverse boo
 
 		case noDateNoShow:
 			postTitle = fileNameNoExt
+			fileNameNoExt = strings.ToLower(fileNameNoExt)
 		}
 
 		files += fmt.Sprintf("=> %s %s\n", baseRoute+"/"+fileNameNoExt, postTitle)
