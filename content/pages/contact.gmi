@@ -6,3 +6,11 @@
 => https://twitter.com/fuwnzy Twitter
 => https://youtube.com/fuwnzy YouTube
 => https://matrix.to/#/@fuwn:matrix.org Matrix
+
+## DONATE
+
+* Bitcoin: bc1qpcyqn63d8uz8q6msna9789sc5sstvp2rew5dgw
+* Monero: 43QPcYCm6BFfufsmN9RrXvM6bcdj3nDZc2stkDbSNpwgf3XQpqrSpadVosB3qtTAyg1T2NUSJ5E2miadhorH53pKF274wUB
+* Litecoin: ltc1qqwsg6wx49zjhlpypk0xe7q4kgclml3d8kx4hlz
+
+or through OpenAlias: fuwn.me
