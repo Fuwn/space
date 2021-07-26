@@ -17,6 +17,7 @@ ______
 => /skills Skills
 => /interests Interests
 => /contact Contact
+=> /donate Donate
 => /gemini Gemini
 => /gopher Gopher
 => /blog Blog

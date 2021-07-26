@@ -17,6 +17,7 @@ func routes() {
 	createRoute("/contact", "default.gmi", "pages/contact.gmi")
 	createRoute("/gemini", "default.gmi", "pages/gemini.gmi")
 	createRoute("/gopher", "default.gmi", "pages/gopher.gmi")
+	createRoute("/donate", "default.gmi", "pages/donate.gmi")
 
 	// TODO: Iterate over content/pages/blog directory to automate blog routing
 	createBlogRoute("/programming_languages", "pages/blog/programming_languages", "Programming Languages", false, noDateNoShow)

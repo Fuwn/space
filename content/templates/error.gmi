@@ -23,6 +23,7 @@ You can try refreshing the page, if that doesn't change anything, contact Fuwn!
 => /skills Skills
 => /interests Interests
 => /contact Contact
+=> /donate Donate
 => /gemini Gemini
 => /gopher Gopher
 => /blog Blog
