@@ -33,9 +33,9 @@ Elaho: An elegant IOS Gemini client.
 
 ### PROXIES
 
-Kineto: A Gemini to HTTP proxy, simple and just works.
+Capybara: A Gemini to HTTP proxy, simple and just works.
 
-=> https://git.sr.ht/~sircmpwn/kineto Kineto
+=> https://github.com/fuwn/capybara Capybara
 
 Mozz.us and Vuples.one Portals: Great Gemini to HTTP proxies, simple and intuitive.
 
