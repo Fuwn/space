@@ -31,6 +31,6 @@ Hits: {{ .Hits }}
 > Any and all opinions listed here are my own and not representitive of my employers; past, present, and future.
 
 => https://github.com/fuwn/space Source Code
-=> http://yeas7sm3cmcpqbnbs4cp4ot2fqm6hllyjkhct4vjjnsu35le374u5vyd.onion Tor
+=> http://fuwnme4wbs5x36jjf2usedw2zscozwhazykhyfkjsmudtb7egs3mb7yd.onion Tor
 
 {{ .Copyright }}
