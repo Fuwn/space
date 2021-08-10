@@ -30,5 +30,6 @@ func errors() {
 
 func meta() {
 	createFileRoute("/favicon.txt", "favicon.txt")
-  createFileRoute("/favicon.ico", "favicon.ico")
+	createFileRoute("/favicon.ico", "favicon.ico")
+  createFileRoute("/robots.txt", "robots.txt")
 }
