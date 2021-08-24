@@ -7,6 +7,7 @@ func handle() {
 	routes()
 	errors()
 	meta()
+	redirect()
 }
 
 func routes() {
@@ -30,4 +31,8 @@ func errors() {
 
 func meta() {
 	createFileRoute("/favicon.txt", "favicon.txt")
+}
+
+func redirect() {
+	createRedirectRoute("/x/*", "/proxy")
 }
