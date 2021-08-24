@@ -153,3 +153,13 @@ func legacySupport(baseRoute string) {
 		return c.NoContent(gig.StatusRedirectPermanent, baseRoute)
 	})
 }
+
+func createRedirectRoute(route string, redirectRoute string) {
+	// TODO: Redirect with path
+	//
+	// Example:
+	//   /x/something -> /proxy/something instead of /x/something -> /proxy
+	g.Handle(route, func(c gig.Context) error {
+		return c.NoContent(gig.StatusRedirectPermanent, route)
+	})
+}
