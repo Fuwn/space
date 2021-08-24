@@ -6,3 +6,9 @@
 => https://twitter.com/fuwnzy Twitter
 => https://youtube.com/fuwnzy YouTube
 => https://matrix.to/#/@fuwn:matrix.org Matrix
+
+## Email
+
+=> mailto:fuwnzy@gmail.com fuwnzy@gmail.com
+=> mailto:fuwn@protonmail.com fuwn@protonmail.com (I check this...)
+=> mailto:fuwn@pm.me fuwn@pm.me (...and this more frequently!)

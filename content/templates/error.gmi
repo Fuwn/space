@@ -1,12 +1,12 @@
 ```
-______                                               
-|  ___|                                              
-| |_ _   ___      ___ __    ___ _ __   __ _  ___ ___ 
+______
+|  ___|
+| |_ _   ___      ___ __    ___ _ __   __ _  ___ ___
 |  _| | | \ \ /\ / / '_ \  / __| '_ \ / _` |/ __/ _ \
 | | | |_| |\ V  V /| | | |_\__ \ |_) | (_| | (_|  __/
 \_|  \__,_| \_/\_/ |_| |_(_)___/ .__/ \__,_|\___\___|
-                               | |                   
-                               |_|                   
+                               | |
+                               |_|
 ```
 
 # ERROR {{ .Error }}
@@ -34,8 +34,10 @@ You can try refreshing the page, if that doesn't change anything, contact Fuwn!
 {{ if .HitsEnabled }}
 Hits: {{ .Hits }}
 {{ end }}
-> Any and all opinions listed here are my own and not representitive of my employers; past, present, and future.
+> Any and all opinions listed here are my own and not representative of my employers; past, present, and future.
 
 => https://github.com/fuwn/space Source Code
+=> http://fuwnme4wbs5x36jjf2usedw2zscozwhazykhyfkjsmudtb7egs3mb7yd.onion Tor
+=> http://fuwn.i2p/?i2paddresshelper=farkjfnlz6grt55rupbabuhfkvhi7pivwdfwztgcxdklh3db3mfq.b32.i2p I2P
 
 {{ .Copyright }}
