@@ -10,9 +10,10 @@ build: fmt
 validate: .space/.certificates/space.crt .space/.certificates/space.key
 
 ssl:
+	mkdir -p .space/.certificates
 	openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
-	  -out space.crt \
-	  -keyout space.key \
+	  -out .space/.certificates/space.crt \
+	  -keyout .space/.certificates/space.key \
 	  -subj "/CN=fuwn.space"
 
 docker: fmt
