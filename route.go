@@ -160,6 +160,6 @@ func createRedirectRoute(route string, redirectRoute string) {
 	// Example:
 	//   /x/something -> /proxy/something instead of /x/something -> /proxy
 	g.Handle(route, func(c gig.Context) error {
-		return c.NoContent(gig.StatusRedirectPermanent, route)
+		return c.NoContent(gig.StatusRedirectPermanent, redirectRoute)
 	})
 }
