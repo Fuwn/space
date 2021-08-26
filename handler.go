@@ -32,9 +32,9 @@ func errors() {
 func meta() {
 	createFileRoute("/favicon.txt", "favicon.txt")
 	createFileRoute("/favicon.ico", "favicon.ico")
-  createFileRoute("/robots.txt", "robots.txt")
+	createFileRoute("/robots.txt", "robots.txt")
 }
 
 func redirect() {
-	createRedirectRoute("/x/*", "/proxy")
+	createRedirectRoute("/x/*", "/proxy", true)
 }
