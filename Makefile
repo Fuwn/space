@@ -14,7 +14,7 @@ ssl:
 	openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
 	  -out .space/.certificates/space.crt \
 	  -keyout .space/.certificates/space.key \
-	  -subj "/CN=fuwn.space"
+	  -subj "/CN=fuwn.me"
 
 docker: fmt
 	docker build -t fuwn/space:latest .
