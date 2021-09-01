@@ -2,6 +2,8 @@
 
 ## TECH STACKS
 
+* C
+* C++
 * Go
 * Node.js: Discord.js, Angular, Express, Akairo, React, Nuxt, Vue
 * Deno
