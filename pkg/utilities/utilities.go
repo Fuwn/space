@@ -26,7 +26,7 @@ func GetCopyright() string {
 	return viper.GetString("space.footer.copyright")
 }
 
-// Check if the following files exist, return files that don't exist
+// DoesFilesExist Check if the following files exist, return files that don't exist
 func DoesFilesExist(files []string) []string {
 	nonExistant := []string{}
 
