@@ -28,16 +28,16 @@ func GetCopyright() string {
 
 // DoesFilesExist Check if the following files exist, return files that don't exist
 func DoesFilesExist(files []string) []string {
-	nonExistant := []string{}
+	nonExistent := []string{}
 
 	for _, file := range files {
 		// https://stackoverflow.com/a/12518877
 		if _, err := os.Stat(file); os.IsNotExist(err) {
-			nonExistant = append(nonExistant, file)
+			nonExistent = append(nonExistent, file)
 		}
 	}
 
-	return nonExistant
+	return nonExistent
 }
 
 func TrimLastChar(s string) string {

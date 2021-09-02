@@ -54,12 +54,12 @@ func main() {
 	handle()
 
 	// Certificate check
-	nonExistant := utilities.DoesFilesExist([]string{
+	nonExistent := utilities.DoesFilesExist([]string{
 		".space/.certificates/space.crt",
 		".space/.certificates/space.key",
 	})
-	if len(nonExistant) != 0 {
-		panic("The following files crucial to execution DO NOT exist: " + strings.Join(nonExistant, ", "))
+	if len(nonExistent) != 0 {
+		panic("The following files crucial to execution DO NOT exist: " + strings.Join(nonExistent, ", "))
 	}
 
 	// Start
