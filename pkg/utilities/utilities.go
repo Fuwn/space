@@ -28,7 +28,7 @@ func GetCopyright() string {
 
 // DoesFilesExist Check if the following files exist, return files that don't exist
 func DoesFilesExist(files []string) []string {
-	nonExistent := []string{}
+	var nonExistent []string
 
 	for _, file := range files {
 		// https://stackoverflow.com/a/12518877
