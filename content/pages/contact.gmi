@@ -1,7 +1,7 @@
 # CONTACT
 
-=> https://github.com/fuwn GitHub
-=> https://gitlab.com/fuwn GitLab
+=> https://github.com/Fuwn GitHub
+=> https://gitlab.com/Fuwn GitLab
 => https://discord.com/users/fun#1337 Discord
 => https://twitter.com/Fuwnr Twitter
 => https://youtube.com/Fuwnr YouTube
@@ -9,6 +9,6 @@
 
 ## Email
 
-=> mailto:fuwnzy@gmail.com fuwnzy@gmail.com
-=> mailto:fuwn@protonmail.com fuwn@protonmail.com (I check this...)
-=> mailto:fuwn@pm.me fuwn@pm.me (...and this more frequently!)
+=> mailto:contact@fuwn.me contact@fuwn.me (I check this the most often)
+=> mailto:fuwn@protonmail.com fuwn@protonmail.com
+=> mailto:fuwn@pm.me fuwn@pm.me (Alias)
