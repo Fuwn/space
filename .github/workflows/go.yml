@@ -1,0 +1,15 @@
+name: Go ✅
+
+on: [push, pull_request, workflow_dispatch ]
+
+jobs:
+  check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+        
+      - name: Check ✅
+        uses: cedrickring/golang-action@1.6.0
+        continue-on-error: false
+        
