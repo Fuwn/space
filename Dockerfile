@@ -14,7 +14,7 @@ COPY . .
 
 RUN go build -o ./out/space .
 
-FROM alpine:3.14
+FROM alpine:3.15
 
 RUN apk add ca-certificates
 
